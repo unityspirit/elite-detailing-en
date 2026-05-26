@@ -1,4 +1,4 @@
-/* ======================================================
+﻿/* ======================================================
    ELITE DETAILING — Design System (Cinematic Scroll)
    Palette: Deep navy, electric blue, chrome silver
    TEXT MANIFESTO: Solid fill + outside-only shadow
@@ -35,7 +35,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
   background: var(--bg);
 }
 
