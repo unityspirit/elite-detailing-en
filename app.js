@@ -1,4 +1,4 @@
-﻿/* ─── Elite Detailing — ScrollCanvas Engine ─── */
+/* ─── Elite Detailing — ScrollCanvas Engine ─── */
 'use strict';
 
 /* ── Constants ──────────────────────────── */
@@ -65,9 +65,9 @@ async function loadAllFrames() {
   let failed = 0;
   const msgs = [
     'Preparing cinematic experience…',
-    'Загружаем кадры студии…',
-    'Рендерим атмосферу…',
-    'Собираем интерфейс…',
+    'Loading studio footage…',
+    'Rendering atmosphere…',
+    'Building interface…',
     'Almost ready…'
   ];
 
@@ -209,8 +209,8 @@ function runCounters(pi) {
     const step = tgt / 60;
     const t = setInterval(() => {
       cur += step;
-      if (cur >= tgt) { el.textContent = tgt.toLocaleString('ru-RU'); clearInterval(t); return; }
-      el.textContent = Math.floor(cur).toLocaleString('ru-RU');
+      if (cur >= tgt) { el.textContent = tgt.toLocaleString('en-US'); clearInterval(t); return; }
+      el.textContent = Math.floor(cur).toLocaleString('en-US');
     }, 16);
   });
 }
@@ -298,7 +298,7 @@ if (cursorGlow && matchMedia('(hover:hover)').matches) {
 window.handleSubmit = function() {
   const name = document.getElementById('formName').value.trim();
   const phone = document.getElementById('formPhone').value.trim();
-  if (!name || !phone) { alert('Введите имя и Phone.'); return; }
+  if (!name || !phone) { alert('Please enter your name and phone number.'); return; }
   const btn = document.getElementById('submitBtn');
   const txt = document.getElementById('submitText');
   btn.disabled = true; txt.textContent = 'Sending…';
@@ -306,8 +306,8 @@ window.handleSubmit = function() {
     document.querySelector('.contact-form').innerHTML = `
       <div class="form-success" style="text-align:center;padding:40px 20px;">
         <div style="font-size:3rem;margin-bottom:16px;">⚡</div>
-        <div style="font-family:var(--font-heading);font-size:1.8rem;color:var(--blue);margin-bottom:8px;letter-spacing:4px;text-shadow:var(--ts);">ЗАЯВКА ПРИНЯТА!</div>
-        <div style="color:#fff;font-size:.95rem;text-shadow:var(--ts);">Спасибо, ${name}! Мы свяжемся с вами в ближайшее время.</div>
+        <div style="font-family:var(--font-heading);font-size:1.8rem;color:var(--blue);margin-bottom:8px;letter-spacing:4px;text-shadow:var(--ts);">REQUEST RECEIVED!</div>
+        <div style="color:#fff;font-size:.95rem;text-shadow:var(--ts);">Thank you, ${name}! We'll get back to you shortly.</div>
       </div>`;
   }, 1200);
 };
